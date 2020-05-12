@@ -1,5 +1,8 @@
 package First;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Author: wgl
  * @Date: 2019/9/27 15:36
@@ -7,6 +10,7 @@ package First;
  */
 public class First {
     public static void main(String[] args) {
-        System.out.println("helloworld");
+        Set<String> keySet = new HashSet<String>();
+        System.out.println(keySet.size());
     }
 }
