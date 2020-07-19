@@ -22,19 +22,21 @@ import java.util.concurrent.CopyOnWriteArraySet;
  **/
 public class NotSafeDemo03 {
     public static void main(String[] args) {
-        Map<String,String> map = new ConcurrentHashMap<>();
+        /*Map<String,String> map = new ConcurrentHashMap<>();
         for (int i = 0; i < 30; i++) {
             new Thread(()->{
                 map.put(Thread.currentThread().getName(),UUID.randomUUID().toString().substring(0,8));
                 System.out.println(map);
             },String.valueOf(i)).start();
-        }
+        }*/
+        listNotSafe();
     }
 
     private static void listNotSafe() {
-        List<String> list = new CopyOnWriteArrayList<>();
+        //List<String> list = new CopyOnWriteArrayList<>();
+        List<String> list = Collections.synchronizedList(new ArrayList<>());
         //List<String> list = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 3; i++) {
             new Thread(()->{
                 list.add(UUID.randomUUID().toString().substring(0,8));
                 System.out.println(list);
