@@ -22,11 +22,12 @@ public class NoVisibility {
 
     public static void main(String[] args) {
         new ReaderThread().start();
-        try {
-            Thread.sleep(2000);
+        /*try {
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
+        System.out.println("****");
         number = 42;
         ready = true;
     }
