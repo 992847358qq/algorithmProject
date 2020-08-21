@@ -17,7 +17,7 @@ public class ThreadJoinTest {
         ThreadFactory namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
         ExecutorService singleThreadPool = new ThreadPoolExecutor(1,2,0L,TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<Runnable>(124),namedThreadFactory,new ThreadPoolExecutor.AbortPolicy());
-        CountDownLatch countDownLatch = new CountDownLatch(2);
+        CountDownLatch countDownLatch = new CountDownLatch(3);
         singleThreadPool.execute(()->{
             synchronized (obj){
                 System.out.println("Thread1 start1");
@@ -48,7 +48,7 @@ public class ThreadJoinTest {
                 countDownLatch.countDown();
             }
         });
-        countDownLatch.await();
+        countDownLatch.await(5,TimeUnit.SECONDS);
         singleThreadPool.shutdown();
         System.out.println("count:"+count);
 
