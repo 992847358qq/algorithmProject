@@ -11,11 +11,11 @@ import java.util.concurrent.CompletableFuture;
 public class CompletableFutureDemo {
     public static void main(String[] args) throws Exception {
         CompletableFuture<Void> completableFuture = CompletableFuture.runAsync(()->{
-            System.out.println(Thread.currentThread().getName()+"no ok---------");
+            System.out.println(Thread.currentThread().getName()+" no ok---------");
         });
         completableFuture.get();
         CompletableFuture<Integer> completableFuture1 = CompletableFuture.supplyAsync(()->{
-            System.out.println(Thread.currentThread().getName()+"ok---------------");
+            System.out.println(Thread.currentThread().getName()+"  ok---------------");
             int a = 100/0;
             return 1024;
         });

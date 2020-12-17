@@ -23,17 +23,16 @@ public class BlockingQueueDemo {
         //System.out.println(blockingQueue.remove());  java.util.NoSuchElementException
         //检查
         //System.out.println(blockingQueue.element());
-
-        /*System.out.println(blockingQueue.offer("a"));
+        System.out.println(blockingQueue.offer("a"));
         System.out.println(blockingQueue.offer("b"));
         System.out.println(blockingQueue.offer("c"));
         System.out.println(blockingQueue.offer("d"));
 
+        /*System.out.println(blockingQueue.poll());
         System.out.println(blockingQueue.poll());
-        System.out.println(blockingQueue.poll());
-        System.out.println(blockingQueue.poll());
+        System.out.println(blockingQueue.poll());*/
+        System.out.println(blockingQueue.peek());
 
-        System.out.println(blockingQueue.peek());*/
 
         /*blockingQueue.put("a");
         blockingQueue.put("a");

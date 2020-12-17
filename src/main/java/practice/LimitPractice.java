@@ -11,15 +11,15 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class LimitPractice {
     // 限流的个数
-    private int maxCount = 10;
+    private static int maxCount = 10;
     // 指定的时间内
-    private long interval = 60;
+    private static long interval = 60;
     // 原子类计数器
     private AtomicInteger atomicInteger = new AtomicInteger(0);
     // 起始时间
     private long startTime = System.currentTimeMillis();
 
-    public boolean limit(int maxCount, int interval) {
+    public boolean limit(int maxCount, long interval) {
         if (atomicInteger.get() == 0) {
             startTime = System.currentTimeMillis();
             atomicInteger.addAndGet(1);
@@ -43,7 +43,7 @@ public class LimitPractice {
         LimitPractice limitPractice = new LimitPractice();
         new Thread(()->{
             for (int i =1;i<20;i++){
-                System.out.println(Thread.currentThread().getName()+i+limitPractice.limit(10,60));
+                System.out.println(Thread.currentThread().getName()+i+limitPractice.limit(maxCount,interval));
                 /*try {
                     TimeUnit.SECONDS.sleep(7);
                 } catch (InterruptedException e) {

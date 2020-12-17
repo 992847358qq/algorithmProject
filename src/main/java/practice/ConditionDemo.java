@@ -137,7 +137,7 @@ class  ShareData{
                     }
                     //通知
                     number = 3;
-                    //如何通知第二个
+                    //如何通知第三个
                     c3.signal();
                     break;
                 case 15:
@@ -151,7 +151,7 @@ class  ShareData{
                     }
                     //通知
                     number = 1;
-                    //如何通知第二个
+                    //如何通知第一个
                     c1.signal();
                     break;
                 default:
