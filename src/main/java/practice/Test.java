@@ -9,11 +9,15 @@ import java.util.Date;
  * @Description:
  */
 public class Test {
-    private  Integer i = 10;
+    /*private  Integer i = 10;
     private int a = 10;
     public static void main(String[] args) {
         Integer integer = new Integer(10);
         new Test().i = 20;
         System.out.println(new Test().i);
+    }*/
+    public static void main(String[] args) {
+        String result = "嗨,%s";
+        System.out.println(String.format(result, "wgl"));
     }
 }
