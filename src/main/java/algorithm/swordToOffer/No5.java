@@ -8,7 +8,7 @@ package algorithm.swordToOffer;
  **/
 public class No5 {
     public static void main(String[] args) {
-        System.out.println(replaceStr("hello good evening"));
+        System.out.println(replaceStr1("hello good evening"));
     }
     public static String replaceStr(String str){
         if (str == null){
@@ -36,6 +36,36 @@ public class No5 {
                 temp--;
             }
             n--;
+        }
+        return new String(len);
+    }
+
+    public static String replaceStr1(String str){
+        if (str == null){
+            return "字符串为空";
+        }
+        //记录出现了几个空格
+        int count = 0;
+        for (int i = 0;i<str.length();i++){
+            if (str.charAt(i) == ' '){
+                count++;
+            }
+        }
+        //1个空格占一个字符，%20三个字符，所以在原来字符串长度的基础上，再扩大2*count个长度
+        char[] len = new char[str.length()+2*count];
+        int temp = 0;
+        int n = 0;
+        while (n<str.length()){
+            if (str.charAt(n) == ' '){
+                len[temp] = '%';
+                len[temp+1] = '2';
+                len[temp+2] = '0';
+                temp+=3;
+            }else {
+                len[temp] =str.charAt(n);
+                temp++;
+            }
+            n++;
         }
         return new String(len);
     }

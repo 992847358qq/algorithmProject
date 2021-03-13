@@ -28,9 +28,9 @@ public class No8 {
         twenty_three.right = twenty_five;
         twenty_five.left = twenty_four;
         twenty_five.right = twenty_six;
-        inOrderTraveral(twenty_two); //17 16 18 19 21 22 23 24 25 26
-        System.out.println();
-        System.out.println(getNextNode(twenty_two).data);
+        inOrderTraveral(twenty_five); //17 16 18 19 21 22 23 24 25 26
+        /*System.out.println();
+        System.out.println(getNextNode(twenty_two).data);*/
     }
 
     public static TreeNode getNextNode(TreeNode treeNode){
