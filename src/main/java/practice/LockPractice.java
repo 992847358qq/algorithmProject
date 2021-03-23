@@ -51,8 +51,8 @@ public class LockPractice {
         TimeUnit.SECONDS.sleep(1);
         new Thread(()->{
             try {
-                phone.sendMessage();
-                //phone.sayHello();
+                //phone.sendMessage();
+                phone.sayHello();
                 //phone1.sendMessage();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -61,11 +61,11 @@ public class LockPractice {
     }
 }
 class Phone{
-    public   synchronized void sendEmail() throws Exception{
+    public   static synchronized void sendEmail() throws Exception{
         TimeUnit.SECONDS.sleep(2);
         System.out.println("******sendEmail");
     }
-    public   synchronized void sendMessage() throws Exception{
+    public  static synchronized void sendMessage() throws Exception{
         System.out.println("******sendMessage");
     }
     public void sayHello() throws Exception{
