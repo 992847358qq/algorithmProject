@@ -1,26 +1,28 @@
 package algorithm;
 
 /**
- * @Author: wgl
- * @Date: 2020/07/20 15:05
- * @Description:
- */
+ * @author MR.Wang
+ * @dept
+ * @description TODO
+ * @date 2021/1/5 22:10
+ **/
 public class binarySearch {
     public static void main(String[] args) {
-        int[] nums = new int[]{2,4,7,34,57,89};
-        int temp = 57;
-        int left = 0;
-        int right = nums.length-1;
-        while (left<=right){
-            int mid = (right + left)/2;
-            if (nums[mid] == temp){
+        int[] arr = new int[]{1,2,3,4,5,6,7,8};
+        int start = 0;
+        int end = arr.length-1;
+        int index = 2;
+        while (start<= end){
+            int mid = (start+end)/2;
+            if (index == arr[mid]){
                 System.out.println(mid);
-                break;
-            }else if (nums[mid]>temp){
-                right = mid-1;
-            }else if (nums[mid]<temp){
-                left = mid+1;
+                return;
+            }else if (index>arr[mid]){
+                start = mid+1;
+            }else if (index<arr[mid]){
+                end = mid-1;
             }
         }
+        System.out.println(-1);
     }
 }
