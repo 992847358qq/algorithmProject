@@ -6,8 +6,10 @@ package algorithm.swordToOffer2.linkedList;
  * @date: 2022-02-15
  **/
 public class ListNode {
-    private int val;
+    public int val;
     public ListNode next;
+    public ListNode child;
+    public ListNode prev;
     public ListNode(int val){
         this.val = val;
     }

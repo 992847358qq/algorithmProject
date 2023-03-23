@@ -9,7 +9,9 @@ public class No1 {
     //0x80000000为最小的int型整数-2的31次方；0xc0000000是它的一半为-2的30次方
     //
     public static void main(String[] args) {
-        System.out.println(divide(125,6));
+        //System.out.println(divide(125,6));
+        System.out.println(Byte.MAX_VALUE ==  0x7f);
+        System.out.println(Byte.MIN_VALUE == 0x00000080);
     }
 
     public static int divide(int dividend,int divisor){

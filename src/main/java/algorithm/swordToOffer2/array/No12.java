@@ -14,6 +14,8 @@ public class No12 {
         System.out.println(pivotIndex(nums));
     }
 
+    //1 2 3 2 1
+
     public static int pivotIndex(int [] nums){
         int total = 0;
         for (int num:nums){

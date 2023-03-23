@@ -36,18 +36,18 @@ public class No5 {
 
     //如果都为小写字母，那么每个字符串最多都有26个不一样字母，可以先存储每个字符串字母的位置，再做比较
     //整体时间复杂度为O(nk+n的二次方)，数组长度为n，空间复杂度为O(n)
-    public static int maxLength1(String[] arr){
-        boolean[][] flags = new boolean[arr.length][26];
+    public static int maxLength1(String[] words){
+        boolean[][] flags = new boolean[words.length][26];
         //假如arr数组长度为n，字符串平均长度为k，时间复杂度为O(nk)
-        for (int i = 0; i < arr.length; i++) {
-            for (char c:arr[i].toCharArray()){
+        for (int i = 0; i < words.length; i++) {
+            for (char c:words[i].toCharArray()){
                 flags[i][c-'a'] = true;
             }
         }
         int result = 0;
         //时间复杂度为O(n的二次方)
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i+1; j <arr.length ; j++) {
+        for (int i = 0; i < words.length; i++) {
+            for (int j = i+1; j <words.length ; j++) {
                 int k = 0;
                 //时间复杂度为O(1)
                 for (;k<26;k++){
@@ -56,7 +56,7 @@ public class No5 {
                     }
                 }
                 if (k == 26){
-                    int prod = arr[i].length() * arr[j].length();
+                    int prod = words[i].length() * words[j].length();
                     result = Math.max(result,prod);
                 }
             }

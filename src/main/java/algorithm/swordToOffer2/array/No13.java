@@ -31,6 +31,9 @@ public class No13 {
         }
     }
 
+    /**
+     * 转换公式sums[r2][c2] - sum[r1-1][c2] - sum[r2][c1-1] + sum[r1-1][c1-1]
+     */
     public  int sumRegion(int row1,int col1,int row2,int col2){
         return nums[row2+1][col2+1] - nums[row1][col2+1]-
                 nums[row2+1][col1] + nums[row1][col1];

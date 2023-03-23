@@ -16,7 +16,7 @@ public class No22 {
             return null;
         }
         ListNode slow = head;
-        ListNode fast = slow;
+        ListNode fast = slow.next;
         while (slow !=null && fast != null){
             if (slow == fast){
                 return slow;
@@ -35,20 +35,36 @@ public class No22 {
         if (loopNode == null){
             return null;
         }
+        //找到相遇节点，然后求出环的长度
         int count = 1;
         for (ListNode n = loopNode;n.next != loopNode;n = n.next){
             count++;
         }
+        //先让一个指针跑环的长度
         ListNode fast = head;
         for (int i = 0; i < count; i++) {
             fast = fast.next;
         }
+        //再从头部指针一块走，相遇即为环的入口
         ListNode slow = head;
         while (slow != fast){
             slow = slow.next;
             fast = fast.next;
         }
         return slow;
+    }
+
+    public static ListNode detectCycle1(ListNode head){
+        ListNode loopNode = getNodeInLoop(head);
+        if (loopNode == null){
+            return null;
+        }
+        ListNode node = head;
+        while (node != loopNode){
+            node = node.next;
+            loopNode = loopNode.next;
+        }
+        return node;
     }
 
 

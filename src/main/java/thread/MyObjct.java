@@ -31,7 +31,7 @@ public class MyObjct {
 //        TimeUnit.SECONDS.sleep(2);
 //        System.out.println(myObjct.count);
 
-            new Thread(()->{
+        new Thread(()->{
             for (int i = 0; i < 20000; i++) {
                 myObjct.incr();
             }
@@ -41,7 +41,7 @@ public class MyObjct {
                 myObjct.incr();
             }
         }).start();
-                TimeUnit.SECONDS.sleep(2);
+        TimeUnit.SECONDS.sleep(2);
         System.out.println(myObjct.atomicInteger.get());
     }
 }

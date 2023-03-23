@@ -7,7 +7,7 @@ package algorithm.swordToOffer2.binary_system;
  **/
 public class No4 {
     public static void main(String[] args) {
-        int[] nums = new int[]{1,3,5,8,7,1,3,5,8,1,3,5,8};
+        int[] nums = new int[]{3,3,3,4,4,4,5,5,5,7,7};
         System.out.println(singleNumber(nums));
         System.out.println(singleNumber1(nums));
     }
@@ -45,6 +45,7 @@ public class No4 {
     //同理可以解决输入一个整数数组，数组中只有一个数字出现m次，其他数字都出现n次，求那个唯一出现m次的数字。
     //如果数组中所有数字的第i个数位相加能被n整除，那么出现m次的数字的第i个数位一定为0
     //如果不能整除，则为1
+    //对于求得的结果/m  即可得到该数字
 
 
 }

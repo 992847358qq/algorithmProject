@@ -19,7 +19,10 @@ public class No20 {
         }
         int count = 0;
         for (int i = 0; i < str.length(); i++) {
+            //从中心像两边扩展
+            //中心为奇数
             count += countPalindrome(str,i,i);
+            //中心为偶数
             count += countPalindrome(str,i,i+1);
         }
         return count;

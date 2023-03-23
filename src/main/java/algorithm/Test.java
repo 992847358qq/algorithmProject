@@ -1,9 +1,9 @@
 package algorithm;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+
+import algorithm.swordToOffer2.linkedList.ListNode;
+
+import java.util.*;
 
 /**
  * @author MR.Wang
@@ -13,45 +13,31 @@ import java.util.Stack;
  **/
 public class Test {
     public static void main(String[] args) {
-        /*BigDecimal data1 = new BigDecimal("1.63");
-        BigDecimal data2 = new BigDecimal("1.0");
-        if (data1.compareTo(data2) < 0) {
-            System.out.println("第二位数大！");
-        }
-        if (data1.compareTo(data2) == 0) {
-            System.out.println("两位数一样大！");
-        }
-        if (data1.compareTo(data2) > 0) {
-            System.out.println("第一位数大！");
-        }*/
-        /*String str = "str";
-        System.out.println(str.charAt(0));*/
-        //System.out.println(get().toString());
-        System.out.println(get1());
+
     }
-    public static List get(){
-        List<Integer> list = new ArrayList<>();
-        try{
-            return list;
-        } catch(Exception e){
-            list.add(1);
-            return list;
-        }finally{
-            list.add(2);
+
+    public static ListNode getNode(ListNode head){
+        ListNode node = head;
+        ListNode tail = null;
+        while (node != null){
+            ListNode next = node.next;
+            if (node.child != null){
+                ListNode childNode = node.child;
+                ListNode tailNode = getNode(childNode);
+                node.child = null;
+                node.next = childNode;
+                childNode.prev = node;
+                if (next != null){
+                    tailNode.next = next;
+                    next.prev = tailNode;
+                }
+                tail =  tailNode;
+            }else {
+                tail = node;
+            }
+            node = next;
         }
+        return tail;
     }
-    public static int get1(){
-        int i = 0;
-        try{
-            i++;
-            int j= i/0;
-            return i;
-        } catch(Exception e){
-            i++;
-            return i;
-        }finally{
-            i++;
-            return i;
-        }
-    }
+
 }

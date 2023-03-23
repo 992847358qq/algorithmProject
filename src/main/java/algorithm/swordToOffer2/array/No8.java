@@ -24,6 +24,6 @@ public class No8 {
                 sum -= nums[left++];
             }
         }
-        return minLength;
+        return minLength == Integer.MAX_VALUE?0:minLength;
     }
 }
