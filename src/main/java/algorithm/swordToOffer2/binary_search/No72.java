@@ -25,7 +25,7 @@ public class No72 {
 //    }
 
     public static void main(String[] args) {
-        System.out.println(new No72().mySqrt(18));
+        System.out.println(new No72().mySqrt(8));
     }
 
     int mySqrt(int x) {

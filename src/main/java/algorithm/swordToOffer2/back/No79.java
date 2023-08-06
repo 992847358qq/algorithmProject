@@ -11,8 +11,9 @@ import java.util.List;
 public class No79 {
 
     public static void main(String[] args) {
-        int[] nums  = new int[]{1,2};
-        new No79().subsets(nums);
+        int[] nums  = new int[]{1,2,3};
+        List<List<Integer>> subsets = new No79().subsets(nums);
+        System.out.println(subsets.toString());
     }
 
     public List<List<Integer>> subsets(int[] nums){
