@@ -7,6 +7,11 @@ package test;
  **/
 public class Main {
     public static void main(String[] args) {
-        System.out.println(ChildClass.value);
+//        System.out.println(ChildClass.value);
+//        System.out.println("------------------");
+//        ChildClass.staticMethod();
+//        System.out.println("-------------------");
+        ChildClass childClass = new ChildClass();
+        childClass.commonMethod();
     }
 }

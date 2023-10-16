@@ -16,7 +16,7 @@ public class Test1 {
         Object obj2 = new Object();
         obj2 = 1;
         Object obj3 = new Object();
-        obj3 = 2;
+        obj3 = 1;
         System.out.println(obj == obj1);
         System.out.println(obj.equals(obj1));
 
