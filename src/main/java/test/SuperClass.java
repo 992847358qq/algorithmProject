@@ -11,5 +11,13 @@ public class SuperClass {
     }
     public static int value = 123;
 
+    public static void staticMethod(){
+        System.out.println("this is a static method");
+    }
+
+    public void commonMethod(){
+        System.out.println("this is not a static method");
+    }
+
 
 }

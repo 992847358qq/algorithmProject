@@ -9,7 +9,8 @@ import test.Test;
  **/
 public class Test2  extends Test{
     public static void main(String[] args) {
-        Test test = new Test();
-        test.test1();
+        Test2 test2 = new Test2();
+        test2.test1();
+        test2.test2();
     }
 }
