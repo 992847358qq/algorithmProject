@@ -17,6 +17,7 @@ public class Parallellimit {
             CountRunnable runnable = new CountRunnable(cdl);
             pool.execute(runnable);
         }
+        pool.shutdown();
     }
 }
 
