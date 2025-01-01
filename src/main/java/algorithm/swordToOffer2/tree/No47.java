@@ -14,7 +14,7 @@ public class No47 {
         }
         root.left = pruneTree(root.left);
         root.right = pruneTree(root.right);
-        if (root.left == null && root.left == null && root.val == 0){
+        if (root.left == null && root.right == null && root.val == 0){
             return null;
         }
         return root;

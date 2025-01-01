@@ -13,6 +13,7 @@ public class No59 {
     private int size;
     public No59(int k,int[] nums){
         this.size = k;
+        minHeap = new PriorityQueue<>(size);
         for (int num:nums){
             add(num);
         }

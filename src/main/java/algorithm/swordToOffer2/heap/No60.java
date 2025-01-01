@@ -10,7 +10,7 @@ import java.util.*;
 public class No60 {
     //需要一个大小为O(n)的哈希表和大小为O(k)的最小堆，所以空间复杂度为O(n)
     //最小堆添加、删除元素时间复杂度为O(logn);
-    public List<Integer> topN(int[] nums,int k){
+    public int[] topN(int[] nums,int k){
         Map<Integer,Integer> map = new HashMap<>();
         for (int num:nums){
             map.put(num,map.getOrDefault(num,0) + 1);
@@ -27,9 +27,11 @@ public class No60 {
                 }
             }
         }
-        List<Integer> result = new ArrayList<>();
+        int[] result = new int[queue.size()];
+        int a = 0;
         for (Map.Entry<Integer,Integer> entry:queue){
-            result.add(entry.getKey());
+            result[a] = (entry.getKey());
+            a++;
         }
         return result;
     }

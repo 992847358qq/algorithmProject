@@ -76,7 +76,7 @@ public class OrderTest1 {
             }
            cur =  stack.peek();
             if (cur.right != null && cur.right != pre){
-                stack.push(cur.right);
+                cur = cur.right;
             }else {
                 stack.pop();
                 pre = cur;

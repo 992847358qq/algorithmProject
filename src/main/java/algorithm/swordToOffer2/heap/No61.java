@@ -55,7 +55,7 @@ public class No61 {
     //直到k个组合全部组合完成
     public List<List<Integer>> kSmallestPairs1(int[] nums1, int[] nums2, int k) {
         Queue<int[]> minHeap = new PriorityQueue<>(
-                (m1,m2) -> nums1[m1[0]] + nums2[m1[2]] - nums1[m2[0]] - nums2[m2[1]]
+                (m1,m2) -> nums1[m1[0]] + nums2[m1[1]] - nums1[m2[0]] - nums2[m2[1]]
         );
         if (nums2.length>0){
             for (int i = 0; i < Math.min(k,nums1.length); i++) {
